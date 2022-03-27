@@ -10,7 +10,7 @@ namespace com.kwpinthong.GoogleSheetDownloader
 {
     public static class GoogleSheet
     {
-        private const string csvDataPath = "/com.kwpinthong.googlesheetdownloader/CSVData/{0}.csv";
+        private const string csvDataPath = "/CSVData/{0}.csv";
 
         private static string FormatGoogleSheetLink(string sheetID, string gid, string format)
         {
