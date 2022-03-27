@@ -1,5 +1,8 @@
-﻿namespace com.kwpinthong.GoogleSheetDownloader
+﻿using System;
+
+namespace com.kwpinthong.GoogleSheetDownloader
 {
+    [Serializable]
     public class GoogleSheetDocument
     {
         public string Enty;

@@ -1,8 +1,6 @@
 {
     "name": "GoogleSheetDownloader",
-    "references": [
-        "GUID:ac25fdce327aca147922c1318cd94b0a"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

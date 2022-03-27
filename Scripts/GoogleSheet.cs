@@ -27,6 +27,7 @@ namespace com.kwpinthong.GoogleSheetDownloader
             }
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
+                IncludePrivateMembers = true,
                 DetectColumnCountChanges = true,
             };
             using (var reader = new StreamReader(filePath))

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f783582ba8827429ab19a8cc07a9c8, type: 3}
+  m_Name: RemoteCharacter
+  m_EditorClassIdentifier: 
+  GoogleSheetId: 1YXHTQOzvr0l0VM4EuLeb1C9rVzW3-CZxTWjWpk-riy4
+  Documents:
+  - Enty: Character - 1
+    GID: 1778936164
+  - Enty: Character - 2
+    GID: 2145054400
+  list:
+  - id: 1
+    name: Sam
+    gender: 0
+  - id: 2
+    name: Rose
+    gender: 1
+  - id: 3
+    name: Yuu
+    gender: 1
+  - id: 4
+    name: Alex
+    gender: 0

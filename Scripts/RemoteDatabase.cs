@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Sirenix.OdinInspector;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace com.kwpinthong.GoogleSheetDownloader
@@ -8,11 +10,37 @@ namespace com.kwpinthong.GoogleSheetDownloader
         public string GoogleSheetId;
         public List<GoogleSheetDocument> Documents = new List<GoogleSheetDocument>();
 
+        [Header("Database")]
+        [PropertyOrder(1)]
+        [SerializeField]
+        protected List<T> list = new List<T>();
+        public List<T> Database => list;
+
+        [Button, PropertyOrder(0)]
+        public virtual void CreateDatabase()
+        {
+            if (string.IsNullOrEmpty(GoogleSheetId))
+            {
+                throw new System.Exception("GoogleSheetId must not null, stop download");
+            }
+            list.Clear();
+            foreach (var document in Documents)
+            {
+                if (string.IsNullOrEmpty(document.GID))
+                {
+                    throw new System.Exception("document.GID must not null, stop download");
+                }
+                var remoteList = DownloadGoogleSheet(document.GID);
+                list.AddRange(remoteList);
+            }
+            EditorUtility.SetDirty(this);
+            AssetDatabase.Refresh();
+            Debug.Log($"Completed Remote {GetType()} database, save asset");
+        }
+
         protected List<T> DownloadGoogleSheet(string GID)
         {
             return GoogleSheet.CSVDownload<T>(GoogleSheetId, GID);
         }
-        
-        public abstract void CreateDatabase();
     }
 }
