@@ -1,7 +1,7 @@
 {
-    "name": "com.kwpinthong.googlesheetdownloader",
-    "version": "1.0.0",
-    "displayName": "Google Sheet Downloader",
-    "description": "",
-    "unity": "2019.4",
+  "name": "com.kwpinthong.googlesheetdownloader",
+  "displayName": "Google Sheet Downloader",
+  "version": "1.0.0",
+  "unity": "2019.4",
+  "description": ""
 }
