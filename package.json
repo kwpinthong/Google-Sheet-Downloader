@@ -1,7 +1,7 @@
 {
   "name": "com.kwpinthong.googlesheetdownloader",
   "displayName": "Google Sheet Downloader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "unity": "2019.4",
   "description": "Downloading all information in sheet to ScriptableObject as a database to use in the project."
 }
