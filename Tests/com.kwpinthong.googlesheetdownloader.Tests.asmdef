@@ -1,9 +1,9 @@
 {
-    "name": "Tests",
+    "name": "com.kwpinthong.googlesheetdownloader.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Editor"
+        "com.kwpinthong.googlesheetdownloader.Editor"
     ],
     "includePlatforms": [
         "Editor"
