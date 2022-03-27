@@ -14,5 +14,13 @@ namespace Tests
             Assert.AreEqual("Sam", result[0].Name);
             Assert.AreEqual("Rose", result[1].Name);
         }
+
+        [Test]
+        public void EnumValue()
+        {
+            var result = GoogleSheet.CSVDownload<Character>("1YXHTQOzvr0l0VM4EuLeb1C9rVzW3-CZxTWjWpk-riy4", "1778936164");
+            Assert.AreEqual(Gender.Male, result[0].Gender);
+            Assert.AreEqual(Gender.Female, result[1].Gender);
+        }
     }
 }
