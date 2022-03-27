@@ -3,8 +3,7 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "GoogleSheetDownloader",
-        "com.kwpinthong.googlesheetdownloader.Editor"
+        "GoogleSheetDownloader"
     ],
     "includePlatforms": [
         "Editor"

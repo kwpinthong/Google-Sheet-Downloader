@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using CsvHelper.Configuration;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,7 +10,7 @@ namespace com.kwpinthong.GoogleSheetDownloader
 {
     public static class GoogleSheet
     {
-        private const string csvDataPath = "/com.kwpinthong.GoogleSheetDownloader/CSVData/{0}.csv";
+        private const string csvDataPath = "/com.kwpinthong.googlesheetdownloader/CSVData/{0}.csv";
 
         private static string FormatGoogleSheetLink(string sheetID, string gid, string format)
         {
@@ -24,8 +25,12 @@ namespace com.kwpinthong.GoogleSheetDownloader
             {
                 client.DownloadFile(url, filePath);
             }
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                DetectColumnCountChanges = true,
+            };
             using (var reader = new StreamReader(filePath))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var csv = new CsvReader(reader, config))
             {
                 csv.Read();
                 csv.ReadHeader();
