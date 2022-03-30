@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using kwpinthong.GoogleSheetDownloader.Data;
 
-namespace com.kwpinthong.GoogleSheetDownloader
+namespace kwpinthong.GoogleSheetDownloader
 {
     public abstract class RemoteDatabase<T> : ScriptableObject
     {

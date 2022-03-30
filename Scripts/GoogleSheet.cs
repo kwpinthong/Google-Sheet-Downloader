@@ -6,7 +6,7 @@ using System.IO;
 using System.Net;
 using UnityEngine;
 
-namespace com.kwpinthong.GoogleSheetDownloader
+namespace kwpinthong.GoogleSheetDownloader
 {
     public static class GoogleSheet
     {
