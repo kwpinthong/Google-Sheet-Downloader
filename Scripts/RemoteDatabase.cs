@@ -8,8 +8,10 @@ namespace kwpinthong.GoogleSheetDownloader
 {
     public abstract class RemoteDatabase<T> : ScriptableObject
     {
+#if UNITY_EDITOR
         public string GoogleSheetId;
         public List<GoogleSheetDocument> Documents = new List<GoogleSheetDocument>();
+#endif
 
         [Header("Database")]
         [PropertyOrder(1)]
@@ -17,6 +19,7 @@ namespace kwpinthong.GoogleSheetDownloader
         protected List<T> list = new List<T>();
         public List<T> Database => list;
 
+#if UNITY_EDITOR
         [Button, PropertyOrder(0)]
         public virtual void CreateDatabase()
         {
@@ -43,5 +46,6 @@ namespace kwpinthong.GoogleSheetDownloader
         {
             return GoogleSheet.CSVDownload<T>(GoogleSheetId, GID);
         }
+#endif
     }
 }
