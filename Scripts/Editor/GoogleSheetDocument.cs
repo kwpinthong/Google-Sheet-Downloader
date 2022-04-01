@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace kwpinthong.GoogleSheetDownloader.Data
+namespace GoogleSheetDownloader.Data
 {
     [Serializable]
     public class GoogleSheetDocument
