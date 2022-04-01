@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using GoogleSheetDownloader.Data;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using System;
 #if UNITY_EDITOR
-using GoogleSheetDownloader.Data;
 using UnityEditor;
 #endif
 
@@ -11,7 +11,6 @@ namespace GoogleSheetDownloader
 {
     public abstract class Database<T> : ScriptableObject
     {
-#if UNITY_EDITOR
         [SerializeField] protected string GoogleSheetId;
         [SerializeField] protected List<GoogleSheetDocument> Documents;
 
@@ -34,8 +33,10 @@ namespace GoogleSheetDownloader
                 var remoteList = DownloadGoogleSheet(document.GID);
                 database.AddRange(remoteList);
             }
+#if UNITY_EDITOR
             EditorUtility.SetDirty(this);
             AssetDatabase.Refresh();
+#endif
             Debug.Log($"Completed Remote {GetType()} database, save asset");
         }
 
@@ -43,7 +44,6 @@ namespace GoogleSheetDownloader
         {
             return GoogleSheet.CSVDownload<T>(GoogleSheetId, GID);
         }
-#endif
 
         [Header("Database")]
         [PropertyOrder(1)]
