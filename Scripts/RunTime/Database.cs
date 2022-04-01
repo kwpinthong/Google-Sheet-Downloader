@@ -42,7 +42,11 @@ namespace GoogleSheetDownloader
 
         protected List<T> DownloadGoogleSheet(string GID)
         {
+#if UNITY_EDITOR
             return GoogleSheet.CSVDownload<T>(GoogleSheetId, GID);
+#else
+            return new List<T>();
+#endif
         }
 
         [Header("Database")]
