@@ -48,6 +48,8 @@ namespace GoogleSheetDownloader
         [PropertyOrder(1)]
         [SerializeField] protected List<T> database;
 
+        public int Count => database == null ? 0 : database.Count;
+
         public void AddRange(List<T> itemList)
         {
             if (database == null)
