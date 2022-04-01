@@ -51,6 +51,21 @@ namespace GoogleSheetDownloader
 
         public int Count => database == null ? 0 : database.Count;
 
+        /// <summary>
+        /// clone current database to newlist for other class read/edit
+        /// </summary>
+        public List<T> CloneDatabase
+        {
+            get
+            {
+                if (database == null)
+                    return null;
+                List<T> cloneDatabase = new List<T>();
+                cloneDatabase.AddRange(database);
+                return cloneDatabase;
+            }
+        }
+
         public void AddRange(List<T> itemList)
         {
             if (database == null)
