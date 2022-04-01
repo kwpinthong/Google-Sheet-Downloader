@@ -1,6 +1,8 @@
 ﻿using Sirenix.OdinInspector;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using kwpinthong.GoogleSheetDownloader.Data;
 
@@ -34,8 +36,10 @@ namespace kwpinthong.GoogleSheetDownloader
                 var remoteList = DownloadGoogleSheet(document.GID);
                 list.AddRange(remoteList);
             }
+#if UNITY_EDITOR
             EditorUtility.SetDirty(this);
             AssetDatabase.Refresh();
+#endif
             Debug.Log($"Completed Remote {GetType()} database, save asset");
         }
 
