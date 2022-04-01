@@ -1,7 +1,7 @@
 {
   "name": "googlesheetdownloader",
   "displayName": "Google Sheet Downloader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "unity": "2019.4",
   "description": "Downloading all information in sheet to ScriptableObject as a database to use in the project."
 }
