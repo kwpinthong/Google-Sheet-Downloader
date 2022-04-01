@@ -1,5 +1,5 @@
 {
-    "name": "Editor",
+    "name": "GoogleSheetDownloader.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"
