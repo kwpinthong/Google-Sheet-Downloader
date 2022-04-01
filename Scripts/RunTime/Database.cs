@@ -79,10 +79,21 @@ namespace GoogleSheetDownloader
                 return default;
             for (int i = 0; i < database.Count; i++)
             {
-                var item = database[i];
-                if (match(item)) return item;
+                if (match(database[i])) return database[i];
             }
             return default;
+        }
+
+        public List<T> FindAll(Predicate<T> match)
+        {
+            if (database == null)
+                return null;
+            List<T> allList = new List<T>();
+            for (int i = 0; i < database.Count; i++)
+            {
+                if (match(database[i])) allList.Add(database[i]);
+            }
+            return allList;
         }
 
         public T Get(int index)
