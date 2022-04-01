@@ -77,7 +77,7 @@ namespace GoogleSheetDownloader
         {
             if (database == null)
                 return default;
-            for (int i = 0; i < Count; i++)
+            for (int i = 0; i < database.Count; i++)
             {
                 var item = database[i];
                 if (match(item)) return item;
