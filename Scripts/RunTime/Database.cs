@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using System;
 #if UNITY_EDITOR
 using GoogleSheetDownloader.Data;
 using UnityEditor;
@@ -70,6 +71,18 @@ namespace GoogleSheetDownloader
             if (database == null)
                 return false;
             return database.Contains(item);
+        }
+
+        public T Find(Predicate<T> match)
+        {
+            if (database == null)
+                return default;
+            for (int i = 0; i < Count; i++)
+            {
+                var item = database[i];
+                if (match(item)) return item;
+            }
+            return default;
         }
 
         public T Get(int index)
